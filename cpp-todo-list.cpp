@@ -60,9 +60,9 @@ int main()
 
         std::cout << std::endl << std::endl;
 
-        std::cout << "[a]dd a new Todo" << std::endl;
-        std::cout << "[c]omplete a Todo" << std::endl;
-        std::cout << "[q]uit" << std::endl;
+        std::cout << "add a new Todo" << std::endl;
+        std::cout << "complete a Todo" << std::endl;
+        std::cout << "quit" << std::endl;
 
         std::cout << "choice: ";
 
