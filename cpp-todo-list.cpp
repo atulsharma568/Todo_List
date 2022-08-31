@@ -4,6 +4,7 @@
 */
 
 #include <bits/stdc++.h>
+using namespace std;
 
 class TodoItem {
 private:
@@ -22,7 +23,7 @@ public:
         return true;
     }
     int getId() { return id; }
-    std::string getDescription() { return description; }
+    string getDescription() { return description; }
     bool isCompleted() { return completed; }
 
     void setCompleted(bool val) { completed = val; }
@@ -32,10 +33,10 @@ int main()
 {
     char input_option;
     int input_id;
-    std::string input_description;
-    std::string version = "v0.2.0";
-    std::list<TodoItem> todoItems;
-    std::list<TodoItem>::iterator it;
+    string input_description;
+    string version = "v0.2.0";
+    list<TodoItem> todoItems;
+    list<TodoItem>::iterator it;
 
     srand(time(NULL));
 
@@ -43,40 +44,40 @@ int main()
 
     while (1) {
         system("cls");
-        std::cout << "Todo List Maker - " << version << std::endl;
-        std::cout << std::endl << std::endl;
+        cout << "Todo List Maker - " << version << endl;
+        cout << endl << endl;
 
         for (it = todoItems.begin(); it != todoItems.end(); it++) {
 
-            std::string completed = it->isCompleted() ? "done" : "not done";
+           string completed = it -> isCompleted() ? "done" : "not done";
 
-            std::cout << it->getId() << " | " << it->getDescription() << " | "
-                << completed << std::endl;
+            cout << it -> getId() << " | " << it -> getDescription() << " | "
+                << completed << endl;
         }
 
         if (todoItems.empty()) {
-            std::cout << "Add your first todo!" << std::endl;
+            cout << "Add your first todo!" << endl;
         }
 
-        std::cout << std::endl << std::endl;
+        cout << std::endl << std::endl;
 
-        std::cout << "add a new Todo" << std::endl;
-        std::cout << "complete a Todo" << std::endl;
-        std::cout << "quit" << std::endl;
+        cout << "add a new Todo" << endl;
+        cout << "complete a Todo" << endl;
+        cout << "quit" << endl;
 
-        std::cout << "choice: ";
+        cout << "choice: ";
 
-        std::cin >> input_option;
+        cin >> input_option;
 
         if (input_option == 'q') {
-            std::cout << "Have a great day now!" << std::endl;
+            cout << "Have a great day now!" << endl;
             break;
         }
         else if (input_option == 'a') {
-            std::cout << "Add a new description: ";
-            std::cin.clear();
-            std::cin.ignore();
-            std::getline(std::cin, input_description);
+            cout << "Add a new description: ";
+            cin.clear();
+            cin.ignore();
+            getline(cin, input_description);
 
             TodoItem newItem;
             newItem.create(input_description);
@@ -84,13 +85,13 @@ int main()
 
         }
         else if (input_option == 'c') {
-            std::cout << "Enter id to mark completed: ";
-            std::cin >> input_id;
+            cout << "Enter id to mark completed: ";
+            cin >> input_id;
 
             for (it = todoItems.begin(); it != todoItems.end(); it++) {
 
-                if (input_id == it->getId()) {
-                    it->setCompleted(true);
+                if (input_id == it -> getId()) {
+                    it -> setCompleted(true);
                     break;
                 }
             }
