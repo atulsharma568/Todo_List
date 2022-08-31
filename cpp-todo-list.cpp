@@ -1,13 +1,9 @@
 /** cpp-todo-list
 * Small console based application in C++ to demonstrate a basic Todo application
-* @erikyuzwa
-* License: MIT
+* @Atul
 */
 
-#include <iostream>
-#include <string>
-#include <list>
-#include <ctime>
+#include <bits/stdc++.h>
 
 class TodoItem {
 private:
